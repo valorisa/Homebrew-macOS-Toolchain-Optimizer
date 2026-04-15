@@ -1,0 +1,5 @@
+.DS_Store
+*.log
+*.bak
+.zshrc.*.bak
+opt/homebrew/Cellar/**/.__pycache__
