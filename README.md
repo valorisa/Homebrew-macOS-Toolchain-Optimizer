@@ -264,3 +264,6 @@ Ce workflow adhère strictement aux principes de scripting défensif :
 
 Cette documentation est fournie **telle quelle** à des fins éducatives et opérationnelles. Aucune garantie, explicite ou implicite, n'est accordée quant à son aptitude à un usage particulier. L'utilisateur est seul responsable de la validation des procédures dans son propre environnement avant toute application sur des systèmes de production.
 
+---
+
+🎉 👋🍎💻 Happy coding, and may your builds always be green! 🟢✨
