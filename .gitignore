@@ -3,3 +3,4 @@
 *.bak
 .zshrc.*.bak
 opt/homebrew/Cellar/**/.__pycache__
+*.bak
