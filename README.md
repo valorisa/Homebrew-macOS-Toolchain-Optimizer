@@ -5,6 +5,7 @@
 Ce dépôt constitue une documentation complète, éprouvée en production, détaillant le workflow d'optimisation d'un environnement de développement CLI sous **macOS Sequoia** sur architecture **Apple Silicon (`arm64`)**. Chaque procédure décrite a été exécutée, validée et auditée lors d'une session terminal réelle, couvrant la gestion de paquets Homebrew, la résolution de problèmes de permissions système, la configuration sécurisée de SSH, l'intégration de la toolchain Rust, et la mise en place de stratégies de sauvegarde défensives.
 
 La philosophie centrale de ce guide est le **principe de sécurité et d'idempotence** :
+
 - Les opérations sont conçues pour être répétables sans effet de bord cumulé.
 - Toute action potentiellement destructrice est précédée d'une sauvegarde explicite.
 - Chaque modification est systématiquement vérifiée avant d'être considérée comme finalisée.
@@ -50,6 +51,7 @@ brew update && brew upgrade
 ```
 
 🔍 **Ce que cela fait** :
+
 - `brew update` met à jour les références locales des dépôts Homebrew.
 - `brew upgrade` télécharge et compile les nouvelles versions des formules obsolètes.
 
@@ -97,6 +99,7 @@ xcode-select -p
 ```
 
 ✅ **Sortie attendue** :
+
 - Version : `26.2.0.0.1.1764812424`
 - Chemin d'installation : `/Library/Developer/CommandLineTools`
 
@@ -138,6 +141,7 @@ rustup toolchain link system "$(brew --prefix rust)"
 ```
 
 🔍 **Pourquoi cette approche ?** :
+
 - `rustup` devient l'orchestrateur principal de la résolution de toolchains.
 - L'alias `system` pointe vers la version Homebrew, garantissant la cohérence avec les dépendances système (`libssh2`, `openssl`, etc.).
 - Les projets utilisant `rust-toolchain.toml` ou `rustup override` continuent de fonctionner sans interférence.
@@ -185,6 +189,7 @@ brew doctor
 | `brew doctor` | `Your system is ready to brew.` (aucun avertissement critique) |
 
 🔧 **Dépannage rapide** :
+
 - Si `which` pointe vers `/usr/bin/`, vérifiez l'ordre dans `echo $PATH` et la présence de `typeset -U`.
 - Si `brew doctor` signale des fichiers non linkés, exécutez `brew link --overwrite <formula>` avec prudence.
 
@@ -237,6 +242,7 @@ Pour garantir la pérennité de cet environnement, adoptez le calendrier suivant
 ## 🛡️ Notes sur la Sécurité & l'Idempotence
 
 Ce workflow adhère strictement aux principes de scripting défensif :
+
 - 🔒 **Usage minimal de `sudo`** : Réservé exclusivement à la correction de permissions sur des kegs spécifiques. Aucun `sudo` sur `/opt/homebrew` global.
 - 📝 **Modifications non destructives** : Utilisation de `grep -v`, d'ajouts en fin de fichier (`>>`) et de sauvegardes timestampées. Aucun écrasement brut.
 - 🔄 **Déduplication PATH native** : Respect du comportement `typeset -U PATH path` de Zsh pour éviter les collisions silencieuses.
