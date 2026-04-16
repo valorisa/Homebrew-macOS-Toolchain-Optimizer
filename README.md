@@ -2,6 +2,10 @@
 
 [![📝 Markdown Lint](https://github.com/valorisa/Homebrew-macOS-Toolchain-Optimizer/actions/workflows/markdownlint.yml/badge.svg)](https://github.com/valorisa/Homebrew-macOS-Toolchain-Optimizer/actions/workflows/markdownlint.yml)
 [![📜 License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![🍎 macOS](https://img.shields.io/badge/macOS-Sequoia_15.0+-black?logo=apple)](https://www.apple.com/macos/sequoia/)
+[![💻 Architecture](https://img.shields.io/badge/Architecture-Apple_Silicon_%28arm64%29-blue?logo=apple)](https://developer.apple.com/documentation/apple-silicon)
+[![🔄 Dernière mise à jour](https://img.shields.io/github/last-commit/valorisa/Homebrew-macOS-Toolchain-Optimizer/main?label=derni%C3%A8re%20MAJ&color=green)](https://github.com/valorisa/Homebrew-macOS-Toolchain-Optimizer/commits/main)
+[![📦 Homebrew](https://img.shields.io/badge/Homebrew-4.4+-orange?logo=homebrew)](https://brew.sh)
 
 ## 📖 Vue d'ensemble
 
