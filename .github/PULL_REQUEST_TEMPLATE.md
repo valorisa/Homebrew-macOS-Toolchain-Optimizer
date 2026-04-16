@@ -1,4 +1,4 @@
-## 📋 Description
+# 📋 Description
 [Décrivez brièvement les changements apportés]
 
 ## ✅ Checklist
