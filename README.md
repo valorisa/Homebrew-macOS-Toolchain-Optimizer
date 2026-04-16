@@ -1,5 +1,8 @@
 # 🍎 Guide de Configuration et d'Optimisation de l'Environnement de Développement macOS avec Homebrew
 
+[![📝 Markdown Lint](https://github.com/valorisa/Homebrew-macOS-Toolchain-Optimizer/actions/workflows/markdownlint.yml/badge.svg)](https://github.com/valorisa/Homebrew-macOS-Toolchain-Optimizer/actions/workflows/markdownlint.yml)
+[![📜 License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 ## 📖 Vue d'ensemble
 
 Ce dépôt constitue une documentation complète, éprouvée en production, détaillant le workflow d'optimisation d'un environnement de développement CLI sous **macOS Sequoia** sur architecture **Apple Silicon (`arm64`)**. Chaque procédure décrite a été exécutée, validée et auditée lors d'une session terminal réelle, couvrant la gestion de paquets Homebrew, la résolution de problèmes de permissions système, la configuration sécurisée de SSH, l'intégration de la toolchain Rust, et la mise en place de stratégies de sauvegarde défensives.
