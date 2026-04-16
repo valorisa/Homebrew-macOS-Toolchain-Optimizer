@@ -1,0 +1,36 @@
+name: 📝 Markdown Lint
+
+on:
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - '**/*.md'
+      - '.markdownlint.json'
+      - '.markdownlint.yaml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - '**/*.md'
+      - '.markdownlint.json'
+      - '.markdownlint.yaml'
+
+jobs:
+  lint-markdown:
+    name: Vérification du format Markdown
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      statuses: write
+
+    steps:
+      - name: 📥 Checkout du dépôt
+        uses: actions/checkout@v4
+
+      - name: 🧹 Exécution de markdownlint-cli2
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          config: '.markdownlint.json'
+          globs: '**/*.md'
+          fix: false
+          # L'action échouera automatiquement si des violations sont détectées,
+          # bloquant ainsi le merge de la PR tant que les erreurs ne sont pas corrigées.
